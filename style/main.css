@@ -1,0 +1,335 @@
+.container > main {
+  width: 100%;
+}
+
+.container > main > .hero {
+  width: 100%;
+  height: 100%;
+}
+
+.container > main > .hero > .image-user {
+  width: 100%;
+  display: flex;
+  place-content: center;
+  padding: 30px;
+}
+
+.container > main > .hero > .image-user > .profile {
+  width: 170px;
+  height: 170px;
+  background-color: brown;
+  border-radius: 50%;
+  position: relative;
+}
+
+.container > main > .hero > .image-user > .profile::before {
+  content: "";
+  position: absolute;
+  width: 105%;
+  height: 105%;
+  border: 5px solid greenyellow;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container > main > .hero > .image-user > .profile > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* =============================Content Text============================ */
+.container > main > .hero > .text-content {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.container > main > .hero > .text-content > .text {
+  text-align: center;
+}
+
+.container > main > .hero > .text-content > .text > h1 {
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.container > main > .hero > .text-content > .text > p {
+  padding: 10px 0;
+}
+
+.container > main > .hero > .text-content > .text > button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: large;
+  background-color: transparent;
+  border: 2px solid greenyellow;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.container > main > .hero > .text-content > .text > button::before,
+.container > main > .hero > .text-content > .text > button::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: greenyellow;
+}
+
+.container > main > .hero > .text-content > .text > button::before {
+  top: -27px;
+  left: -70px;
+  z-index: -1;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+
+.container > main > .hero > .text-content > .text > button::after {
+  right: -70px;
+  bottom: -27px;
+  z-index: -1;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+
+.container > main > .hero > .text-content > .text > button:hover::before {
+  top: 0;
+  left: 0px;
+  border-radius: 0;
+}
+
+.container > main > .hero > .text-content > .text > button:hover::after {
+  right: 0px;
+  bottom: 0;
+  border-radius: 0;
+}
+
+/* =========================Content Exp========================= */
+
+.container > main > .content-exp {
+  width: 100%;
+  background-color: #edf7fa;
+  margin-top: 15px;
+  padding: 15px 0;
+}
+
+.container > main > .content-exp > .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.container > main > .content-exp > .title > a {
+  color: #000;
+}
+
+.container > main > .content-exp > .row {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.container > main > .content-exp > .row > .card {
+  width: 100%;
+  background-color: white;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 10px 30px;
+  color: #21243d;
+  & h2 {
+    line-height: 35px;
+  }
+
+  & p {
+    font-size: large;
+    padding: 10px 0;
+  }
+}
+
+.container > main > .feature-work {
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.container > main > .feature-work > .title > p {
+  text-align: center;
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.container > main > .feature-work > .row {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.container > main > .feature-work > .row > .card {
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+
+.container > main > .feature-work > .row > .card > .image {
+  height: 250px;
+  width: 100%;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+
+.container > main > .feature-work > .row > .card > .image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container > main > .feature-work > .row > .card > .card-body {
+  padding: 20px 0;
+}
+
+.container > main > .feature-work .row > .card > .card-body > .year {
+  margin: 15px 0;
+}
+
+.container
+  > main
+  > .feature-work
+  .row
+  > .card
+  > .card-body
+  > .year
+  > span:nth-child(1) {
+  background-color: #000;
+  border-radius: 50px;
+  padding: 2px 8px;
+  color: white;
+}
+
+/* ----------------------------- Ipad ------------------------------ */
+
+@media (min-width: 768px) {
+  .container > main > .hero {
+    display: flex;
+    padding: 30px 20px;
+  }
+
+  .container > main > .hero > .image-user {
+    width: 40%;
+  }
+
+  .container > main > .hero > .image-user > .profile {
+    width: 240px;
+    height: 240px;
+  }
+
+  .container > main > .hero > .text-content {
+    width: 60%;
+    padding: 30px;
+  }
+
+  .container > main > .hero > .text-content > .text {
+    text-align: left;
+  }
+
+  .container > main > .content-exp > .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .container > main > .content-exp > .row > .card {
+    width: 49%;
+  }
+
+  .container > main > .content-exp {
+    padding: 0 20px;
+  }
+
+  /* --------------Feature-Work------------------- */
+  .container > main > .feature-work > .row {
+    padding: 0 20px;
+  }
+
+  .container > main > .feature-work > .row > .card {
+    display: flex;
+    padding-bottom: 15px;
+  }
+
+  .container > main > .feature-work > .row > .card-body {
+    width: 70%;
+    margin-left: 10px;
+  }
+
+  .container > main > .feature-work > .row > .image {
+    width: 30%;
+    height: 200px;
+  }
+
+  .container > main > .feature-work > .title {
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+}
+/* ---------------- Laptop ---------------------- */
+@media (min-width: 992px) {
+  .container > main > .hero {
+    padding: 50px 120px;
+  }
+
+  .container > main > .hero > .image-user > .profile {
+    width: 400px;
+    height: 400px;
+  }
+
+  .container > main > .hero > .text-content > .text > h1 {
+    font-weight: 600;
+    line-height: 80px;
+    font-size: 70px;
+  }
+
+  .container > main > .hero > .text-content > .text > p {
+    font-size: 23px;
+    padding: 30px 0;
+  }
+
+  .container > main > .hero > .text-content > .text > button {
+    padding: 15px 30px;
+    font-size: large;
+    font-weight: bolder;
+  }
+
+  .container > main > .content-exp > .row > .card {
+    padding: 40px 40px;
+  }
+
+  .container > main > .content-exp > .row > .card > h2 {
+    font-size: 30px;
+  }
+
+  .container > main > .content-exp {
+    padding: 0 120px;
+  }
+
+  /* --------------Feature-Work------------------- */
+  .container > main > .feature-work {
+    padding: 20px 120px;
+  }
+
+  .container > main > .feature-work > .row > .card {
+    display: flex;
+    padding-bottom: 15px;
+  }
+
+  .container > main > .feature-work > .row > .image {
+    width: 30%;
+    height: 240px;
+  }
+  .container > main > .feature-work > .row > .card-body {
+    width: 70%;
+    margin-left: 30px;
+    & h2 {
+      font-size: 35px;
+    }
+  }
+}
