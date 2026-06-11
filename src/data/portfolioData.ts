@@ -2,7 +2,7 @@ import type { Project, SkillCategory, TimelineItem, ServiceItem, TestimonialItem
 
 export const heroData = {
   name: "Sorm Sophat",
-  title: "Software Engineering Student | Full Stack Developer",
+  title: "Software Engineering Student | Software Developer",
   shortIntro: "Passionate software engineering student and full-stack developer dedicated to building elegant, high-performance web applications. Skilled in modern frontend frameworks, robust backend systems, and cloud infrastructure.",
   location: "Phnom Penh, Cambodia",
   cvUrl: "#",

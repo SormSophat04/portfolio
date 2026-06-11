@@ -9,9 +9,9 @@ export const Contact: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [copiedType, setCopiedType] = useState<'email' | 'phone' | null>(null)
 
-  const email = "sorm.sophat.dev@gmail.com"
-  const phone = "+855 88 555 1234"
-  const location = "Phnom Penh, Cambodia"
+  const email = "sophatsorm2023@gmail.com"
+  const phone = "+855 96 673 6488"
+  const location = "Stueng Mean Chey, Phnom Penh, Cambodia"
 
   // Simple clipboard copy handler
   const handleCopy = (text: string, type: 'email' | 'phone') => {
@@ -136,9 +136,14 @@ export const Contact: React.FC = () => {
               </div>
               <div className="flex-grow min-w-0">
                 <span className="text-xs text-slate-500 uppercase font-mono tracking-wider block mb-0.5">Location</span>
-                <span className="text-sm sm:text-base font-bold text-white font-display truncate block">
+                <a
+                  href="https://www.google.com/maps?q=11.5372957,104.884096"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm sm:text-base font-bold text-white font-display truncate block hover:text-cyan-400 transition-colors"
+                >
                   {location}
-                </span>
+                </a>
               </div>
             </Card>
           </motion.div>

@@ -1,22 +1,22 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { GitPullRequest, GitFork, Star, BookOpen } from 'lucide-react'
+import { GitPullRequest, GitFork, BookOpen } from 'lucide-react'
 import { Card } from '@/components/ui'
 
-// Mock Data for GitHub stats
 const statsCards = [
-  { label: 'Total Repositories', value: '38', icon: BookOpen, color: 'text-blue-400' },
-  { label: 'Total Commits (YTD)', value: '1,842', icon: GitFork, color: 'text-indigo-400' },
-  { label: 'Pull Requests', value: '164', icon: GitPullRequest, color: 'text-purple-400' },
-  { label: 'Total Stars', value: '128', icon: Star, color: 'text-amber-400' },
+  { label: 'Total Repositories', value: '46', icon: BookOpen, color: 'text-blue-400' },
+  { label: 'Total Commits', value: '123', icon: GitFork, color: 'text-indigo-400' },
+  { label: 'Pull Requests', value: '46', icon: GitPullRequest, color: 'text-purple-400' },
+  { label: 'Forks', value: '1', icon: GitFork, color: 'text-amber-400' },
 ]
 
 const languageStats = [
-  { name: 'PHP / Laravel', percentage: 38, color: 'bg-indigo-500' },
-  { name: 'TypeScript / React', percentage: 30, color: 'bg-violet-500' },
-  { name: 'C# / .NET', percentage: 17, color: 'bg-cyan-500' },
-  { name: 'Dart / Flutter', percentage: 10, color: 'bg-sky-400' },
-  { name: 'Java / Spring', percentage: 5, color: 'bg-amber-500' },
+  { name: 'Dart / Flutter', percentage: 40, color: 'bg-teal-500' },
+  { name: 'JavaScript', percentage: 17, color: 'bg-yellow-500' },
+  { name: 'Java / Spring', percentage: 15, color: 'bg-amber-500' },
+  { name: 'HTML / CSS', percentage: 12, color: 'bg-orange-500' },
+  { name: 'PHP / Laravel', percentage: 9, color: 'bg-indigo-500' },
+  { name: 'Blade', percentage: 7, color: 'bg-pink-500' },
 ]
 
 export const GitHubStats: React.FC = () => {
@@ -25,7 +25,7 @@ export const GitHubStats: React.FC = () => {
   // Generate mock contribution graph data (7 days x 53 weeks)
   const generateContributionData = () => {
     const data = []
-    const baseDate = new Date(2025, 0, 1)
+    const baseDate = new Date(2026, 0, 1)
     
     // We want a reproducible grid of contributions with nice organic patterns
     for (let w = 0; w < 53; w++) {
@@ -79,7 +79,14 @@ export const GitHubStats: React.FC = () => {
             viewport={{ once: true }}
             className="text-3xl sm:text-4xl font-bold text-white mb-4 font-display"
           >
-            GitHub <span className="text-gradient-primary">Statistics</span>
+            <a
+              href="https://github.com/SormSophat04"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-indigo-400 transition-colors"
+            >
+              GitHub <span className="text-gradient-primary">Statistics</span>
+            </a>
           </motion.h2>
           <motion.div
             initial={{ width: 0 }}
@@ -133,7 +140,7 @@ export const GitHubStats: React.FC = () => {
                 <h3 className="text-base font-bold text-white font-display">
                   Contribution Activity Graph
                 </h3>
-                <span className="text-xs text-slate-400 font-mono">1,842 Contributions in 2025</span>
+                <span className="text-xs text-slate-400 font-mono">123 Contributions in 2026</span>
               </div>
 
               {/* Scrollable grid wrapper */}

@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             className="px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 mb-6 font-display"
           >
-            AVAILABLE FOR HIRE &amp; INTERNSHIPS
+            AVAILABLE FOR HIRE
           </motion.span>
 
           <motion.h1
