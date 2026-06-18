@@ -6,6 +6,7 @@ export const heroData = {
   shortIntro: "Passionate software engineering student and full-stack developer dedicated to building elegant, high-performance web applications. Skilled in modern frontend frameworks, robust backend systems, and cloud infrastructure.",
   location: "Phnom Penh, Cambodia",
   cvUrl: "#",
+  avatarUrl: "/avatar.png",
   socials: [
     { label: "GitHub", href: "https://github.com", icon: "github" },
     { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
@@ -17,7 +18,8 @@ export const aboutData = {
   intro: "Hi, I'm Sorm Sophat, a dedicated Software Engineering student and Full Stack Developer based in Phnom Penh, Cambodia. I specialize in bridging the gap between elegant frontend user experiences and powerful, secure backend systems. My core objective is to build clean, maintainable software that solves real-world issues.",
   education: "Currently pursuing my Bachelor's degree in Software Engineering in Phnom Penh. My academic studies focus heavily on systems design, advanced database management, algorithm analysis, and software design patterns.",
   passion: "Beyond regular coding, I am fascinated by cloud technologies and server architecture. I spend my free time automating deployments, setting up CI/CD pipelines, containerizing applications with Docker, and building API microservices that scale seamlessly.",
-  goals: "My career aspiration is to work with leading tech organizations as a Full Stack Architect and DevOps Engineer. I aim to continuously master new tools, contribute to open-source software, and help build systems that run efficiently at scale."
+  goals: "My career aspiration is to work with leading tech organizations as a Full Stack Architect and DevOps Engineer. I aim to continuously master new tools, contribute to open-source software, and help build systems that run efficiently at scale.",
+  photoUrl: ""
 }
 
 export const skillCategories: SkillCategory[] = [

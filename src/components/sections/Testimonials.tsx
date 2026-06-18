@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
-import { testimonialsItems } from '@/data/portfolioData'
+import { usePortfolio } from '@/context/PortfolioContext'
 import { Card } from '@/components/ui'
 
 export const Testimonials: React.FC = () => {
+  const { testimonialsItems } = usePortfolio()
   const [activeIndex, setActiveIndex] = useState(0)
 
   const handlePrev = () => {
@@ -76,10 +77,17 @@ export const Testimonials: React.FC = () => {
 
                   {/* Profile info */}
                   <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-                    {/* Fallback circle with initials for robust loading */}
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-base border-2 border-slate-950 shadow-md">
-                      {getInitials(activeTestimonial.name)}
-                    </div>
+                    {activeTestimonial.avatarUrl ? (
+                      <img
+                        src={activeTestimonial.avatarUrl}
+                        alt={activeTestimonial.name}
+                        className="w-14 h-14 rounded-full object-cover border-2 border-slate-950 shadow-md"
+                      />
+                    ) : (
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-base border-2 border-slate-950 shadow-md">
+                        {getInitials(activeTestimonial.name)}
+                      </div>
+                    )}
 
                     <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
                       <span className="text-base font-bold text-white font-display">

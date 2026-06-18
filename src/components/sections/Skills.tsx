@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import * as Icons from 'lucide-react'
-import { skillCategories } from '@/data/portfolioData'
+import { usePortfolio } from '@/context/PortfolioContext'
 import { Card } from '@/components/ui'
 
 // Helper component for dynamic icon resolution
@@ -21,6 +21,7 @@ const CategoryIcon: React.FC<{ name: string; className?: string }> = ({ name, cl
 }
 
 export const Skills: React.FC = () => {
+  const { skillCategories } = usePortfolio()
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

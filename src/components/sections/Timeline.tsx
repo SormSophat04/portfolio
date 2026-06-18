@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { GraduationCap, Briefcase, Award, Activity } from 'lucide-react'
-import { timelineItems } from '@/data/portfolioData'
+import { usePortfolio } from '@/context/PortfolioContext'
 import { Card } from '@/components/ui'
 
 // Helper component for dynamic category icons
@@ -21,6 +21,7 @@ const TimelineIcon: React.FC<{ type: string; className?: string }> = ({ type, cl
 }
 
 export const Timeline: React.FC = () => {
+  const { timelineItems } = usePortfolio()
   return (
     <section id="timeline" className="py-24 relative overflow-hidden bg-grid-pattern">
       {/* Decorative Blob */}
