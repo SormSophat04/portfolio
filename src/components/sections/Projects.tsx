@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ExternalLink } from 'lucide-react'
-import { projects } from '@/data/portfolioData'
+import { usePortfolio } from '@/context/PortfolioContext'
 import { Button, Card, Github } from '@/components/ui'
 
 
 export const Projects: React.FC = () => {
+  const { projects } = usePortfolio()
   const [filter, setFilter] = useState<'all' | 'web' | 'system'>('all')
 
   const filteredProjects = projects.filter((project) => {
@@ -62,7 +63,7 @@ export const Projects: React.FC = () => {
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <motion.div
-                key={project.title}
+                key={project.id}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}

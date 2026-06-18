@@ -1,10 +1,11 @@
 import React from 'react'
 import { motion, type Variants } from 'framer-motion'
 import { Download, ArrowRight, Mail } from 'lucide-react'
-import { heroData } from '@/data/portfolioData'
+import { usePortfolio } from '@/context/PortfolioContext'
 import { Button, Github, Linkedin, Facebook } from '@/components/ui'
 
 export const Hero: React.FC = () => {
+  const { hero: heroData } = usePortfolio()
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -137,7 +138,7 @@ export const Hero: React.FC = () => {
             <div className="relative glassmorphism p-3 rounded-2xl shadow-2xl max-w-[320px] sm:max-w-[360px] transform group-hover:scale-[1.01] transition-transform duration-500">
               <div className="overflow-hidden rounded-xl bg-slate-950 aspect-square relative">
                 <img
-                  src="/avatar.png"
+                  src={heroData.avatarUrl || '/avatar.png'}
                   alt="Sorm Sophat Profile"
                   className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
                   loading="eager"

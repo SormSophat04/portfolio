@@ -1,10 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { BookOpen, Target, Heart, GraduationCap } from 'lucide-react'
-import { aboutData } from '@/data/portfolioData'
+import { usePortfolio } from '@/context/PortfolioContext'
 import { Card } from '@/components/ui'
 
 export const About: React.FC = () => {
+  const { about: aboutData } = usePortfolio()
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

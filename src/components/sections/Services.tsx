@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion, type Variants } from 'framer-motion'
 import { Code, Smartphone, Palette, Terminal } from 'lucide-react'
-import { serviceItems } from '@/data/portfolioData'
+import { usePortfolio } from '@/context/PortfolioContext'
 import { Card } from '@/components/ui'
 
 // Helper component for dynamic icon resolution
@@ -21,6 +21,7 @@ const ServiceIcon: React.FC<{ name: string; className?: string }> = ({ name, cla
 }
 
 export const Services: React.FC = () => {
+  const { serviceItems } = usePortfolio()
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
