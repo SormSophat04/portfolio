@@ -20,7 +20,7 @@ export const About: React.FC = () => {
   }
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-[#05060f]">
+    <section id="about" className="py-24 relative overflow-hidden bg-transparent">
       {/* Decorative Glow */}
       <div className="absolute right-0 top-1/4 w-[300px] h-[300px] rounded-full bg-indigo-600/5 glow-blob" />
 

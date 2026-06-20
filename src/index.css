@@ -112,3 +112,72 @@ h1, h2, h3, h4, h5, h6 {
 .timeline-line-gradient {
   background: linear-gradient(to bottom, var(--color-indigo) 0%, var(--color-violet) 50%, var(--color-cyan) 100%);
 }
+
+/* 3D and Perspective Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* 3D Neon Card Shadows */
+.shadow-3d-indigo {
+  box-shadow: 
+    0 1px 1px rgba(99, 102, 241, 0.1),
+    0 2px 2px rgba(99, 102, 241, 0.1),
+    0 4px 4px rgba(99, 102, 241, 0.1),
+    0 8px 8px rgba(99, 102, 241, 0.1),
+    0 16px 16px rgba(99, 102, 241, 0.1);
+}
+
+.shadow-3d-violet {
+  box-shadow: 
+    0 1px 1px rgba(139, 92, 246, 0.1),
+    0 2px 2px rgba(139, 92, 246, 0.1),
+    0 4px 4px rgba(139, 92, 246, 0.1),
+    0 8px 8px rgba(139, 92, 246, 0.1),
+    0 16px 16px rgba(139, 92, 246, 0.1);
+}
+
+/* Custom Glare/Specular Highlight */
+.tilt-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 50%), rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 60%);
+  z-index: 10;
+  mix-blend-mode: overlay;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.tilt-card:hover .tilt-glare {
+  opacity: 1;
+}
+
+/* Floating 3D Objects animation */
+@keyframes float-3d {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
+}
+
+.animate-float-3d {
+  animation: float-3d 15s infinite linear;
+}
+
