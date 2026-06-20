@@ -2,7 +2,8 @@ import React from 'react'
 import { motion, type Variants } from 'framer-motion'
 import { Code, Smartphone, Palette, Terminal } from 'lucide-react'
 import { usePortfolio } from '@/context/PortfolioContext'
-import { Card } from '@/components/ui'
+import { TiltCard } from '@/components/ui'
+
 
 // Helper component for dynamic icon resolution
 const ServiceIcon: React.FC<{ name: string; className?: string }> = ({ name, className }) => {
@@ -37,7 +38,7 @@ export const Services: React.FC = () => {
 
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden bg-[#05060f]">
+    <section id="services" className="py-24 relative overflow-hidden bg-transparent">
       {/* Ambient background glow */}
       <div className="absolute right-0 bottom-1/4 w-[300px] h-[300px] rounded-full bg-indigo-600/5 glow-blob" />
 
@@ -70,7 +71,11 @@ export const Services: React.FC = () => {
         >
           {serviceItems.map((service) => (
             <motion.div key={service.title} variants={cardVariants}>
-              <Card className="h-full flex flex-col items-start gap-4 p-8 relative border-white/5 overflow-hidden group">
+              <TiltCard
+                maxTilt={12}
+                scale={1.03}
+                className="h-full flex flex-col items-start gap-4 p-8 rounded-2xl border border-white/5 bg-[#0c0e20]/60 backdrop-blur-md shadow-3d-indigo relative overflow-hidden group"
+              >
                 {/* Glowing subtle hover outline */}
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-500 opacity-0 group-hover:opacity-10 blur-md transition-opacity duration-500" />
                 
@@ -86,7 +91,7 @@ export const Services: React.FC = () => {
                 <p className="text-sm text-slate-400 leading-relaxed font-sans">
                   {service.description}
                 </p>
-              </Card>
+              </TiltCard>
             </motion.div>
           ))}
         </motion.div>

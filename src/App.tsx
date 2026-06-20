@@ -12,7 +12,8 @@ import {
   GitHubStats,
   Testimonials,
   Contact,
-  Footer
+  Footer,
+  Background3D
 } from '@/components'
 import { Login } from '@/pages/Login'
 import { DashboardLayout } from '@/pages/admin/DashboardLayout'
@@ -49,6 +50,7 @@ function PortfolioPage() {
 
   return (
     <div className="min-h-screen bg-[#05060f] text-slate-100 font-sans selection:bg-indigo-500/30 selection:text-indigo-200">
+      <Background3D />
       <div
         className="fixed pointer-events-none z-30 w-[350px] h-[350px] rounded-full bg-indigo-500/5 blur-[120px] -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out hidden lg:block"
         style={{

@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ExternalLink } from 'lucide-react'
 import { usePortfolio } from '@/context/PortfolioContext'
-import { Button, Card, Github } from '@/components/ui'
+import { Button, Github, TiltCard } from '@/components/ui'
+
 
 
 export const Projects: React.FC = () => {
@@ -15,7 +16,7 @@ export const Projects: React.FC = () => {
   })
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden bg-[#05060f]">
+    <section id="projects" className="py-24 relative overflow-hidden bg-transparent">
       {/* Decorative Blob */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-indigo-600/5 glow-blob" />
 
@@ -71,7 +72,11 @@ export const Projects: React.FC = () => {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="flex flex-col h-full"
               >
-                <Card className="h-full flex flex-col p-0 overflow-hidden group border-white/5 relative">
+                <TiltCard
+                  maxTilt={10}
+                  scale={1.02}
+                  className="h-full flex flex-col p-0 rounded-2xl border border-white/5 bg-[#0c0e20]/60 backdrop-blur-md shadow-3d-violet group"
+                >
                   {/* Image Header with hover zooms */}
                   <div className="overflow-hidden bg-slate-950 aspect-video relative">
                     <img
@@ -134,7 +139,7 @@ export const Projects: React.FC = () => {
                       )}
                     </div>
                   </div>
-                </Card>
+                </TiltCard>
               </motion.div>
             ))}
           </AnimatePresence>

@@ -2,7 +2,8 @@ import React from 'react'
 import { motion, type Variants } from 'framer-motion'
 import { Download, ArrowRight, Mail } from 'lucide-react'
 import { usePortfolio } from '@/context/PortfolioContext'
-import { Button, Github, Linkedin, Facebook } from '@/components/ui'
+import { Button, Github, Linkedin, Facebook, TiltCard } from '@/components/ui'
+
 
 export const Hero: React.FC = () => {
   const { hero: heroData } = usePortfolio()
@@ -132,10 +133,14 @@ export const Hero: React.FC = () => {
         >
           <div className="relative group">
             {/* Ambient Background Gradient Aura */}
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-30 blur-xl group-hover:opacity-60 transition-all duration-500" />
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-35 blur-2xl group-hover:opacity-75 transition-all duration-500" />
             
-            {/* Outer Glass Container */}
-            <div className="relative glassmorphism p-3 rounded-2xl shadow-2xl max-w-[320px] sm:max-w-[360px] transform group-hover:scale-[1.01] transition-transform duration-500">
+            {/* Outer 3D Tilt Container */}
+            <TiltCard
+              maxTilt={15}
+              scale={1.03}
+              className="relative glassmorphism p-3 rounded-2xl max-w-[320px] sm:max-w-[360px] border border-white/10 shadow-3d-indigo"
+            >
               <div className="overflow-hidden rounded-xl bg-slate-950 aspect-square relative">
                 <img
                   src={heroData.avatarUrl || '/avatar.png'}
@@ -154,7 +159,7 @@ export const Hero: React.FC = () => {
                 </span>
                 <span>Phnom Penh, KH</span>
               </div>
-            </div>
+            </TiltCard>
           </div>
         </motion.div>
       </div>
